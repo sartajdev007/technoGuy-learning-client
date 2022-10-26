@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext)
+    const { createUser, updateUserProfile } = useContext(AuthContext)
     const [error, setError] = useState('')
 
     const handleSubmit = e => {
@@ -21,11 +21,22 @@ const Register = () => {
                 const user = result.user
                 console.log(user)
                 form.reset()
+                handleUpdateUserProfile(name, photoURL)
             })
             .catch(error => {
                 console.error(error)
                 setError(error.message)
             })
+    }
+
+    const handleUpdateUserProfile = (name, photo) => {
+        const profile = {
+            displayName: name,
+            photo: photo
+        }
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(e => console.log(e))
     }
 
 
@@ -47,7 +58,7 @@ const Register = () => {
                             type="name"
                             required
                             name='name'
-                            className="block w-full px-4 py-2 mt-2 text-green-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                            className="block w-full px-4 py-2 mt-2 text-green-700 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
                         />
                     </div>
                     <div className="mb-2">
@@ -60,7 +71,7 @@ const Register = () => {
                         <input
                             type="text"
                             name='photoURL'
-                            className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                            className="block w-full px-4 py-2 mt-2 text-green-700 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
                         />
                     </div>
                     <div className="mb-2">
@@ -73,7 +84,7 @@ const Register = () => {
                         <input
                             type="email"
                             name='email'
-                            className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                            className="block w-full px-4 py-2 mt-2 text-green-700 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
                         />
                     </div>
                     <div className="mb-2">
@@ -86,7 +97,7 @@ const Register = () => {
                         <input
                             type="password"
                             name='password'
-                            className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                            className="block w-full px-4 py-2 mt-2 text-green-700 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
                         />
                     </div>
                     <div className="mt-6">

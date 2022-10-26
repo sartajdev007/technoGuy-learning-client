@@ -1,8 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaHotjar } from "react-icons/fa";
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext)
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
+
     return (
         <div className="navbar sticky bg-base-100">
             <div className="navbar-start">
@@ -26,8 +35,18 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <button className="btn mr-2"><Link to='/login'>Login</Link></button>
-                <button className="btn"><Link to='/register'>Register</Link></button>
+                {
+                    user?.uid ?
+                        <div>
+                            <span className='text-black pr-3'>{user?.displayName}</span>
+                            <button onClick={handleLogOut} className="btn">Log Out</button>
+                        </div>
+                        :
+                        <div>
+                            <button className="btn mr-2"><Link to='/login'>Login</Link></button>
+                            <button className="btn"><Link to='/register'>Register</Link></button>
+                        </div>
+                }
             </div>
         </div>
     );
