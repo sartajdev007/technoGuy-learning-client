@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaChild, FaClipboardList, FaCompass, FaWatchmanMonitoring } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -11,7 +12,44 @@ const Home = () => {
                     <div className="max-w-md">
                         <h1 className="mb-5 text-4xl font-bold">Welcome To TechoGuy</h1>
                         <p className="mb-5">Your very own privately specialized learning point. I am TechnoGuy and I am here to guide to through the whole journey</p>
-                        <Link to='/courses' className="btn btn-primary">Let's Go To the Courses</Link>
+                        <Link to='/courses' className="btn bg-green-500 hover:bg-transparent border-0">Let's Go</Link>
+                    </div>
+                </div>
+            </div>
+            {/* hero section end */}
+
+            <div className='mt-7'>
+                <p className='text-3xl font-bold text-green-500'>Learn The New Way Of The World With Us</p>
+                <p className='text-xl pt-5'>The world is turning digital and so should you. We are just here to show you the right path to going digital</p>
+            </div>
+
+            {/* card section */}
+            <div className='mt-10 row flex w-100'>
+                <div className="card w-96 glass mx-8 shadow-xl shadow-teal-200">
+                    <div className='p-4'>
+                        <figure><FaChild className='text-8xl  text-green-500'></FaChild></figure>
+                        <div className="card-body">
+                            <h2 className="text-center font-bold text-3xl">Self Learning</h2>
+                            <p>Learn Yourself by watching our specialized videos</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="card w-96 glass mx-8 shadow-xl shadow-teal-200">
+                    <div className='p-4'>
+                        <figure><FaClipboardList className='text-8xl  text-green-500'></FaClipboardList ></figure>
+                        <div className="card-body">
+                            <h2 className="text-center font-bold text-3xl">Set Target</h2>
+                            <p>We will help you define your target and the way to reach it</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="card w-96 glass mx-8 shadow-xl shadow-teal-200">
+                    <div className='p-4'>
+                        <figure><FaCompass className='text-8xl  text-green-500'></FaCompass></figure>
+                        <div className="card-body">
+                            <h2 className="text-center font-bold text-3xl">Lifetime Support</h2>
+                            <p>Lifetime Access To Our Resourses and Support</p>
+                        </div>
                     </div>
                 </div>
             </div>
