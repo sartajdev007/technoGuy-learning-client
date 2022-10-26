@@ -129,7 +129,7 @@ const Login = () => {
                             onClick={handleGoogleLogin}
                             className="mt-5 group relative w-full flex justify-center
                 py-2 px-4 border border-transparent text-sm font-medium
-                rounded-md text-black border border-green-500 bg-tranparent hover:bg-green-700 hover:text-white
+                rounded-md text-black border-green-500 bg-tranparent hover:bg-green-700 hover:text-white
                 focus:outline-none focus:ring-2 focus:ring-offset-2
                 focus:ring-green-500"
                         >
@@ -139,7 +139,7 @@ const Login = () => {
                             onClick={handleGithubLogin}
                             className="mt-5 group relative w-full flex justify-center
                 py-2 px-4 border border-transparent text-sm font-medium
-                rounded-md text-black border border-green-500 bg-tranparent hover:bg-green-700 hover:text-white
+                rounded-md text-black border-green-500 bg-tranparent hover:bg-green-700 hover:text-white
                 focus:outline-none focus:ring-2 focus:ring-offset-2
                 focus:ring-green-500"
                         >

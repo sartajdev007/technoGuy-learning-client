@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaChild, FaClipboardList, FaCompass, FaWatchmanMonitoring } from 'react-icons/fa';
+import { FaChild, FaClipboardList, FaCompass } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
