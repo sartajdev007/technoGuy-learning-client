@@ -1,14 +1,39 @@
 import React from 'react';
+import { useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
+    const { signIn } = useContext(AuthContext)
+    const [error, setError] = useState('')
+
+    const handleSignIn = e => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        signIn(email, password)
+            .then(result => {
+                const user = result.user
+                console.log(user)
+                setError('')
+                form.reset()
+            })
+            .catch(error => {
+                console.error(error)
+                setError(error.message)
+            })
+    }
+
     return (
         <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-md w-full space-y-8">
                 <div>
                     <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
                 </div>
-                <form className="mt-8 space-y-6" action="#" method="POST">
+                <form onSubmit={handleSignIn} className="mt-8 space-y-6" action="#" method="POST">
                     <input type="hidden" name="remember" defaultValue="true" />
                     <div className="rounded-md shadow-sm -space-y-px">
                         <div>
@@ -53,7 +78,9 @@ const Login = () => {
                                     Let's Register
                                 </Link>
                             </p>
-
+                            <p className='text-red-500 font-semibold'>
+                                {error}
+                            </p>
                         </div>
                     </div>
 
