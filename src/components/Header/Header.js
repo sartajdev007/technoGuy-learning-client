@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaHotjar } from "react-icons/fa";
+import { FaHotjar, FaUserAlt } from "react-icons/fa";
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
@@ -35,18 +35,31 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {
-                    user?.uid ?
-                        <div>
-                            <span className='text-black pr-3'>{user?.displayName}</span>
-                            <button onClick={handleLogOut} className="btn">Log Out</button>
-                        </div>
-                        :
-                        <div>
-                            <button className="btn mr-2"><Link to='/login'>Login</Link></button>
-                            <button className="btn"><Link to='/register'>Register</Link></button>
-                        </div>
-                }
+                <>
+                    {
+                        user?.uid ?
+                            <>
+                                <span className='text-black pr-3'>{user?.displayName}</span>
+                                {
+                                    user?.photoURL ?
+                                        <img style={{ height: '40px' }} roundedCircle src={user?.photoURL} alt='' />
+                                        :
+                                        <>
+                                            <FaUserAlt className='mr-2'></FaUserAlt>
+                                        </>
+                                }
+                                <button onClick={handleLogOut} className="btn">Log Out</button>
+                            </>
+                            :
+                            <>
+                                <button className="btn mr-2"><Link to='/login'>Login</Link></button>
+                                <button className="btn"><Link to='/register'>Register</Link></button>
+                            </>
+                    }
+                </>
+                <>
+
+                </>
             </div>
         </div>
     );
