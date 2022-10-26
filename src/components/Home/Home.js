@@ -24,7 +24,7 @@ const Home = () => {
             </div>
 
             {/* card section */}
-            <div className='mt-10 row flex w-100'>
+            <div className='mt-10 flex md:flex-row flex-col  w-100'>
                 <div className="card w-96 glass mx-8 shadow-xl shadow-teal-200">
                     <div className='p-4'>
                         <figure><FaChild className='text-8xl  text-green-500'></FaChild></figure>
