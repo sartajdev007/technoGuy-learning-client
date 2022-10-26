@@ -42,7 +42,7 @@ const Header = () => {
                                 <span className='text-black pr-3'>{user?.displayName}</span>
                                 {
                                     user?.photoURL ?
-                                        <img style={{ height: '40px' }} roundedCircle src={user?.photoURL} alt='' />
+                                        <img title={user.displayName} className='mr-2 rounded-full' style={{ height: '40px' }} src={user?.photoURL} alt='' />
                                         :
                                         <>
                                             <FaUserAlt className='mr-2'></FaUserAlt>

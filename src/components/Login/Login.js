@@ -1,3 +1,4 @@
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
@@ -5,9 +6,38 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext)
+    const { signIn, providerLogin } = useContext(AuthContext)
     const [error, setError] = useState('')
 
+    // handle google login
+    const googleProvider = new GoogleAuthProvider()
+
+    const handleGoogleLogin = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
+    // handle Github login
+    const githubProvider = new GithubAuthProvider()
+
+    const handleGithubLogin = () => {
+        providerLogin(githubProvider)
+            .then(result => {
+                const user = result.user
+                console.log(user)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
+    // handle direct login
     const handleSignIn = e => {
         e.preventDefault();
         const form = e.target;
@@ -96,6 +126,7 @@ const Login = () => {
                             Sign in
                         </button>
                         <button
+                            onClick={handleGoogleLogin}
                             className="mt-5 group relative w-full flex justify-center
                 py-2 px-4 border border-transparent text-sm font-medium
                 rounded-md text-black border border-green-500 bg-tranparent hover:bg-green-700 hover:text-white
@@ -105,6 +136,7 @@ const Login = () => {
                             Sign in with Google
                         </button>
                         <button
+                            onClick={handleGithubLogin}
                             className="mt-5 group relative w-full flex justify-center
                 py-2 px-4 border border-transparent text-sm font-medium
                 rounded-md text-black border border-green-500 bg-tranparent hover:bg-green-700 hover:text-white

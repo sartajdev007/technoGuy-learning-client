@@ -12,7 +12,7 @@ const Home = () => {
                     <div className="max-w-md">
                         <h1 className="mb-5 text-4xl font-bold">Welcome To TechoGuy</h1>
                         <p className="mb-5">Your very own privately specialized learning point. I am TechnoGuy and I am here to guide to through the whole journey</p>
-                        <Link to='/courses' className="btn bg-green-500 hover:bg-transparent border-0">Let's Go</Link>
+                        <Link to='/courses' className="btn bg-green-500 hover:bg-green-700 border-0">Let's Go</Link>
                     </div>
                 </div>
             </div>
