@@ -64,7 +64,7 @@ const Header = () => {
                                             <FaUserAlt className='mr-2 text-green-500'></FaUserAlt>
                                         </>
                                 }
-                                <button onClick={handleLogOut} className="btn">Log Out</button>
+                                <button onClick={handleLogOut} className="btn bg-red-600 border-0">Log Out</button>
                             </>
                             :
                             <>
