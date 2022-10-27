@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import ReactToPdf from "react-to-pdf";
+
+const ref = React.createRef();
 
 const GetCourseDetails = () => {
     const course = useLoaderData();
@@ -16,8 +19,13 @@ const GetCourseDetails = () => {
                     </div>
                 </div>
             </div>
-            <div className='mt-10 px-5'>
-                <h1 className='text-4xl text-start font-semibold underline decoration-double decoration-green-600'>What You Can Learn From This Course?</h1>
+            <div ref={ref} className='mt-10 px-5'>
+                <div className='flex'>
+                    <h1 className='text-4xl text-start font-semibold underline decoration-double decoration-green-600'>What You Can Learn From This Course?</h1>
+                    <ReactToPdf targetRef={ref} filename="course-details.pdf">
+                        {({ toPdf }) => <button className='btn bg-indigo-500 ml-10 border-0 hover:bg-indigo-400' onClick={toPdf}>Get Details in pdf</button>}
+                    </ReactToPdf>
+                </div>
                 <p className='mt-3 text-start'>{details}</p>
                 <button className='mt-10 btn bg-green-500 border-0 hover:bg-green-400'><Link to={`/checkout/${checkout_id}`}>Enroll Course Now</Link></button>
             </div >
