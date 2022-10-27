@@ -58,95 +58,104 @@ const Login = () => {
     }
 
     return (
-        <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-md w-full space-y-8">
-                <div>
-                    <h2 className="mt-6 text-center text-3xl font-extrabold text-green-700">Sign in to your account</h2>
+        <div>
+            <div className="hero h-96 bg-green-200">
+                <div className="hero-content text-center text-neutral-content">
+                    <div className="max-w-md">
+                        <h1 className="mb-5 text-7xl font-semibold text-black">Get In Class</h1>
+                    </div>
                 </div>
-                <form onSubmit={handleSignIn} className="mt-8 space-y-6" action="#" method="POST">
-                    <input type="hidden" name="remember" defaultValue="true" />
-                    <div className="rounded-md shadow-sm -space-y-px">
-                        <div>
-                            <label htmlFor="email" className="sr-only">
-                                Email address
-                            </label>
-                            <input
-                                name="email"
-                                type="email"
-                                required
-                                className="appearance-none rounded-none relative block
+            </div>
+            <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+                <div className="max-w-md w-full space-y-8">
+                    <div>
+                        <h2 className="mt-6 text-center text-3xl font-extrabold text-green-700">Sign in to your account</h2>
+                    </div>
+                    <form onSubmit={handleSignIn} className="mt-8 space-y-6" action="#" method="POST">
+                        <input type="hidden" name="remember" defaultValue="true" />
+                        <div className="rounded-md shadow-sm -space-y-px">
+                            <div>
+                                <label htmlFor="email" className="sr-only">
+                                    Email address
+                                </label>
+                                <input
+                                    name="email"
+                                    type="email"
+                                    required
+                                    className="appearance-none rounded-none relative block
                   w-full px-3 py-2 border border-gray-300
                   placeholder-gray-500 text-gray-900 rounded-t-md
                   focus:outline-none focus:ring-green-500
                   focus:border-green-500 focus:z-10 sm:text-sm"
-                                placeholder="Email address"
-                            />
-                        </div>
-                        <div className='pt-4'>
-                            <label htmlFor="password" className="sr-only">
-                                Password
-                            </label>
-                            <input
-                                name="password"
-                                type="password"
-                                required
-                                className="appearance-none rounded-none relative block
+                                    placeholder="Email address"
+                                />
+                            </div>
+                            <div className='pt-4'>
+                                <label htmlFor="password" className="sr-only">
+                                    Password
+                                </label>
+                                <input
+                                    name="password"
+                                    type="password"
+                                    required
+                                    className="appearance-none rounded-none relative block
                   w-full px-3 py-2 border border-gray-300
                   placeholder-gray-500 text-gray-900 rounded-b-md
                   focus:outline-none focus:ring-green-500
                   focus:border-green-500 focus:z-10 sm:text-sm"
-                                placeholder="Password"
-                            />
+                                    placeholder="Password"
+                                />
+                            </div>
                         </div>
-                    </div>
 
-                    <div className="flex items-center justify-between">
-                        <div className="text-sm">
-                            <p>
-                                Didn't Register?? {" "}
-                                <Link to='/register' className="font-medium text-green-600 hover:text-green-500">
-                                    Let's Register
-                                </Link>
-                            </p>
-                            <p className='text-red-500 font-semibold'>
-                                {error}
-                            </p>
+                        <div className="flex items-center justify-between">
+                            <div className="text-sm">
+                                <p>
+                                    Didn't Register?? {" "}
+                                    <Link to='/register' className="font-medium text-green-600 hover:text-green-500">
+                                        Let's Register
+                                    </Link>
+                                </p>
+                                <p className='text-red-500 font-semibold'>
+                                    {error}
+                                </p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div>
-                        <button
-                            type="submit"
-                            className="group relative w-full flex justify-center
+                        <div>
+                            <button
+                                type="submit"
+                                className="group relative w-full flex justify-center
                 py-2 px-4 border border-transparent text-sm font-medium
                 rounded-md text-white bg-green-600 hover:bg-green-700
                 focus:outline-none focus:ring-2 focus:ring-offset-2
                 focus:ring-green-500"
-                        >
-                            Sign in
-                        </button>
-                        <button
-                            onClick={handleGoogleLogin}
-                            className="mt-5 group relative w-full flex justify-center
+                            >
+                                Sign in
+                            </button>
+                            <button
+                                onClick={handleGoogleLogin}
+                                className="mt-5 group relative w-full flex justify-center
                 py-2 px-4 border border-transparent text-sm font-medium
                 rounded-md text-black border-green-500 bg-tranparent hover:bg-green-700 hover:text-white
                 focus:outline-none focus:ring-2 focus:ring-offset-2
                 focus:ring-green-500"
-                        >
-                            Sign in with Google
-                        </button>
-                        <button
-                            onClick={handleGithubLogin}
-                            className="mt-5 group relative w-full flex justify-center
+                            >
+                                Sign in with Google
+                            </button>
+                            <button
+                                onClick={handleGithubLogin}
+                                className="mt-5 group relative w-full flex justify-center
                 py-2 px-4 border border-transparent text-sm font-medium
                 rounded-md text-black border-green-500 bg-tranparent hover:bg-green-700 hover:text-white
                 focus:outline-none focus:ring-2 focus:ring-offset-2
                 focus:ring-green-500"
-                        >
-                            Sign in with Github
-                        </button>
-                    </div>
-                </form>
+                            >
+                                Sign in with Github
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     );

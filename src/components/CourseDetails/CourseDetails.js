@@ -17,7 +17,7 @@ const CourseDetails = ({ courseDetails }) => {
             <div className='mt-10 px-5'>
                 <h1 className='text-4xl text-start font-semibold underline decoration-double decoration-green-600'>What You Can Learn From This Course?</h1>
                 <p className='mt-3 text-start'>{details}</p>
-                <button className='mt-10 btn bg-green-500 border-0 hover:bg-green-400'><Link to=' /checkout'>Enroll Course Now</Link></button>
+                <button className='mt-10 btn bg-green-500 border-0 hover:bg-green-400'><Link to='/checkout'>Enroll Course Now</Link></button>
             </div >
         </div >
     );

@@ -3,14 +3,23 @@ import { Link } from 'react-router-dom';
 import { FaHotjar, FaUserAlt } from "react-icons/fa";
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import { DarkModeSwitch } from 'react-toggle-dark-mode'
+import { useState } from 'react';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
+    const [isDarkMode, setDarkMode] = useState(false);
+
+
     const handleLogOut = () => {
         logOut()
             .then(() => { })
             .catch(error => console.log(error))
     }
+
+    const toggleDarkMode = (checked) => {
+        setDarkMode(checked);
+    };
 
     return (
         <div className="navbar sticky bg-base-100">
@@ -32,6 +41,13 @@ const Header = () => {
                     <li><Link to='/courses'>Courses</Link></li>
                     <li><Link to='/faq'>FAQ</Link></li>
                     <li><Link to="/blogs">Blogs</Link></li>
+                    <li>
+                        <DarkModeSwitch
+                            checked={isDarkMode}
+                            onChange={toggleDarkMode}
+                            size={60}
+                        />
+                    </li>
                 </ul>
             </div>
             <div className="navbar-end">
@@ -45,20 +61,17 @@ const Header = () => {
                                         <img title={user.displayName} className='mr-2 rounded-full' style={{ height: '40px' }} src={user?.photoURL} alt='' />
                                         :
                                         <>
-                                            <FaUserAlt className='mr-2'></FaUserAlt>
+                                            <FaUserAlt className='mr-2 text-green-500'></FaUserAlt>
                                         </>
                                 }
                                 <button onClick={handleLogOut} className="btn">Log Out</button>
                             </>
                             :
                             <>
-                                <button className="btn mr-2"><Link to='/login'>Login</Link></button>
-                                <button className="btn"><Link to='/register'>Register</Link></button>
+                                <button className="btn mr-2 bg-green-500 border-0 hover:bg-green-400"><Link to='/login'>Login</Link></button>
+                                <button className="btn bg-green-500 border-0 hover:bg-green-400"><Link to='/register'>Register</Link></button>
                             </>
                     }
-                </>
-                <>
-
                 </>
             </div>
         </div>
