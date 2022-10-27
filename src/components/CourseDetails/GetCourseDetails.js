@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
-const CourseDetails = ({ courseDetails }) => {
-    const { title, image, details } = courseDetails;
+const GetCourseDetails = () => {
+    const course = useLoaderData();
+    const { title, image, details } = course
+
 
     return (
         <div>
@@ -19,8 +21,8 @@ const CourseDetails = ({ courseDetails }) => {
                 <p className='mt-3 text-start'>{details}</p>
                 <button className='mt-10 btn bg-green-500 border-0 hover:bg-green-400'><Link to=' /checkout'>Enroll Course Now</Link></button>
             </div >
-        </div >
+        </div>
     );
 };
 
-export default CourseDetails;
+export default GetCourseDetails;
