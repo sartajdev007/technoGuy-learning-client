@@ -20,7 +20,16 @@ const FAQ = () => {
                         How much does the course cost?
                     </div>
                     <div className="collapse-content text-start">
-                        The courses of TechnoBoy is very much available
+                        The courses of TechnoBoy is very much affordable for students,job holders,stay-at-home moms. Our main goal is to integrate technology in our daily lives. We also provide beginner class for free in Youtube.
+                    </div>
+                </div>
+                <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                    <input type="checkbox" name="" id="" />
+                    <div className="collapse-title text-xl font-medium">
+                        Do we get lifetime support?
+                    </div>
+                    <div className="collapse-content text-start">
+                        Of Course,You do!Also you get our new courses and updates for free if you buy subscription for one. That means "Pay Once to Enjoy Lifetime"
                     </div>
                 </div>
             </div>
