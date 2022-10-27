@@ -61,14 +61,14 @@ const Header = () => {
                                         <img title={user.displayName} className='mr-2 rounded-full' style={{ height: '40px' }} src={user?.photoURL} alt='' />
                                         :
                                         <>
-                                            <FaUserAlt className='mr-2 text-green-500'></FaUserAlt>
+                                            <FaUserAlt title={user.displayName} className='mr-2 text-green-500'></FaUserAlt>
                                         </>
                                 }
                                 <button onClick={handleLogOut} className="btn bg-red-600 border-0">Log Out</button>
                             </>
                             :
                             <>
-                                <button className="btn mr-2 bg-green-500 border-0 hover:bg-green-400"><Link to='/login'>Login</Link></button>
+                                <button className="btn mr-2 bg-transparent border-2 border-black hover:bg-green-400 text-black"><Link to='/login'>Login</Link></button>
                                 <button className="btn bg-green-500 border-0 hover:bg-green-400"><Link to='/register'>Register</Link></button>
                             </>
                     }
