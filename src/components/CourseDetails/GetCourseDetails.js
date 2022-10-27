@@ -28,7 +28,7 @@ const GetCourseDetails = () => {
                 </div>
                 <div className='text-start'>
                     <p className='mt-3 text-start'>{details}</p>
-                    <button className='mt-10 btn bg-green-500 border-0 hover:bg-green-400'><Link to={`/checkout/${checkout_id}`}>Enroll Course Now</Link></button>
+                    <button className='mt-10 btn bg-green-500 border-0 hover:bg-green-400'><Link to={`/checkout/${checkout_id}`}>Get Premium Access</Link></button>
                 </div>
             </div >
         </div>

@@ -21,7 +21,7 @@ const Courses = () => {
                     <CoursesSidebar></CoursesSidebar>
                 </div>
                 <div className='basis-3/4 ml-8'>
-                    <h2 className='text-2xl font-semibold text-center'>Our Available Courses: {courses.length}</h2>
+                    <h2 className='text-2xl font-semibold text-center'>Our Available Courses</h2>
                     <div className='grid grid-cols md:grid-cols-2 gap-4 pt-5'>
                         {
                             courses.map(course => <Course
