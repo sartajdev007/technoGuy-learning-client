@@ -10,12 +10,14 @@ import Category from "../components/Category/Category";
 import GetCourseDetails from "../components/CourseDetails/GetCourseDetails";
 import CheckOut from "../components/CheckOut/CheckOut";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 
 export const routes = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: '/',
