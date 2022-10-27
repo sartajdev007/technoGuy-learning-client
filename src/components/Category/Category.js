@@ -3,18 +3,12 @@ import { useLoaderData } from 'react-router-dom';
 import CourseDetails from '../CourseDetails/CourseDetails';
 
 const Category = () => {
-    const all = useLoaderData()
+    const courseDetails = useLoaderData();
+    console.log(courseDetails)
 
     return (
         <div>
-            <h3>Courses {all.length}</h3>
-            {
-                all.map(courseDetails => <CourseDetails
-                    key={courseDetails.id}
-                    courseDetails={courseDetails}
-                >
-                </CourseDetails>)
-            }
+            <CourseDetails courseDetails={courseDetails[0]}></CourseDetails>
         </div>
     );
 };
