@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaChild, FaClipboardList, FaCompass } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import AboutUs from './AboutUs';
 
 const Home = () => {
     return (
@@ -17,7 +18,7 @@ const Home = () => {
                 </div>
             </div>
             {/* hero section end */}
-
+            <AboutUs></AboutUs>
             <div className='mt-7'>
                 <p className='text-3xl font-bold text-green-500'>Learn The New Way Of The World With Us</p>
                 <p className='text-xl pt-5'>The world is turning digital and so should you. We are just here to show you the right path to going digital</p>
@@ -27,7 +28,7 @@ const Home = () => {
             <div className='mt-10 flex justify-center gap-12 md:flex-row flex-col  w-100'>
                 <div className="card w-96 glass shadow-xl shadow-teal-200">
                     <div className='p-4'>
-                        <figure><FaChild className='text-8xl  text-green-500'></FaChild></figure>
+                        <figure><FaChild className='text-8xl text-green-500'></FaChild></figure>
                         <div className="card-body">
                             <h2 className="text-center font-bold text-3xl">Self Learning</h2>
                             <p>Learn Yourself by watching our specialized videos</p>
