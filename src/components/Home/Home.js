@@ -2,6 +2,7 @@ import React from 'react';
 import { FaChild, FaClipboardList, FaCompass } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import AboutUs from './AboutUs';
+import Outline from './Outline';
 
 const Home = () => {
     return (
@@ -19,6 +20,7 @@ const Home = () => {
             </div>
             {/* hero section end */}
             <AboutUs></AboutUs>
+            <Outline></Outline>
             <div className='mt-7'>
                 <p className='text-3xl font-bold text-green-500'>Learn The New Way Of The World With Us</p>
                 <p className='text-xl pt-5'>The world is turning digital and so should you. We are just here to show you the right path to going digital</p>

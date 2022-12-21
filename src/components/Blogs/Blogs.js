@@ -13,8 +13,8 @@ const Blogs = () => {
             <div className='mt-7'>
                 <p className='text-5xl font-bold text-green-500'>TechnoBoy Blogs</p>
             </div>
-            <div className='mt-5 w-75'>
-                <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+            <div className='my-10 mx-auto flex flex-col justify-center w-[800px]'>
+                <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box my-5">
                     <input type="checkbox" name="" id="" />
                     <div className="collapse-title text-xl font-medium">
                         How does the private route work?

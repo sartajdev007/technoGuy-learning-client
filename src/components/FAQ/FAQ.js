@@ -13,8 +13,8 @@ const FAQ = () => {
             <div className='mt-7'>
                 <p className='text-5xl font-bold text-green-500'>Frequently Asked Questions</p>
             </div>
-            <div className='mt-5 w-75'>
-                <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+            <div className='my-10 mx-auto flex flex-col justify-center w-[500px]'>
+                <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box my-3">
                     <input type="checkbox" name="" id="" />
                     <div className="collapse-title text-xl font-medium">
                         How much does the course cost?
