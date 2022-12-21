@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaChild, FaClipboardList, FaCompass } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import Loader from '../Loader/Loader';
 import AboutUs from './AboutUs';
 import Instructors from './Instructors';
 import Outline from './Outline';
 
 const Home = () => {
+    const { loading } = useContext(AuthContext)
+
+    if (loading) {
+        return <Loader></Loader>
+    }
+
+
     return (
         <div>
             {/* hero section */}

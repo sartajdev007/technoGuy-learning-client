@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Course = ({ course }) => {
-    const { id, image, details, title } = course
+    const { image, title } = course
 
     return (
         <div className="card w-96 bg-base-200 shadow-lg shadow-teal-500/50 mt-3">

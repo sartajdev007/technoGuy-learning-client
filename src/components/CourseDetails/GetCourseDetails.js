@@ -1,12 +1,20 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import ReactToPdf from "react-to-pdf";
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import Loader from '../Loader/Loader';
 
 const ref = React.createRef();
 
 const GetCourseDetails = () => {
     const course = useLoaderData();
     const { title, image, details, checkout_id } = course
+    const { loading } = useContext(AuthContext)
+
+    if (loading) {
+        return <Loader></Loader>
+    }
 
 
     return (

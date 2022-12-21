@@ -1,8 +1,16 @@
 import React from 'react';
+import { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import Loader from '../Loader/Loader';
 
 const CheckOut = () => {
     const course = useLoaderData()
+    const { loading } = useContext(AuthContext)
+
+    if (loading) {
+        return <Loader></Loader>
+    }
 
     return (
         <div>
@@ -14,8 +22,8 @@ const CheckOut = () => {
                     </div>
                 </div>
             </div>
-            <div>
-
+            <div className='my-10'>
+                <h1 className='text-5xl font-semibold'>Checkout system is under development</h1>
             </div>
         </div>
     );

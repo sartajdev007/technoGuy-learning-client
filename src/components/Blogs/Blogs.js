@@ -1,6 +1,17 @@
 import React from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import Loader from '../Loader/Loader';
 
 const Blogs = () => {
+    const { loading } = useContext(AuthContext)
+
+    if (loading) {
+        return <Loader></Loader>
+    }
+
+
+
     return (
         <div>
             <div className="hero h-96 bg-green-200">

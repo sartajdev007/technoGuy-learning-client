@@ -3,9 +3,10 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import Loader from '../Loader/Loader';
 
 const Register = () => {
-    const { createUser, updateUserProfile } = useContext(AuthContext)
+    const { createUser, updateUserProfile, loading } = useContext(AuthContext)
     const [error, setError] = useState('')
 
     const handleSubmit = e => {
@@ -39,7 +40,9 @@ const Register = () => {
             .catch(e => console.log(e))
     }
 
-
+    if (loading) {
+        return <Loader></Loader>
+    }
     return (
         <div>
             <div className="hero h-96 bg-green-200">

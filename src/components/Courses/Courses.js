@@ -2,10 +2,18 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CoursesSidebar from '../CoursesSideBar/CoursesSidebar'
 import Course from '../Course/Course';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import Loader from '../Loader/Loader';
 
 
 const Courses = () => {
     const courses = useLoaderData();
+    const { loading } = useContext(AuthContext)
+
+    if (loading) {
+        return <Loader></Loader>
+    }
 
     return (
         <div>

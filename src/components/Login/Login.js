@@ -4,15 +4,18 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import Loader from '../Loader/Loader';
 
 const Login = () => {
-    const { signIn, providerLogin } = useContext(AuthContext)
+    const { signIn, providerLogin, loading } = useContext(AuthContext)
     const [error, setError] = useState('')
     const location = useLocation()
+
 
     const from = location.state?.from?.pathname || '/'
 
     const navigate = useNavigate()
+
 
     // handle google login
     const googleProvider = new GoogleAuthProvider()
@@ -63,6 +66,10 @@ const Login = () => {
                 console.error(error)
                 setError(error.message)
             })
+    }
+
+    if (loading) {
+        return <Loader></Loader>
     }
 
     return (
