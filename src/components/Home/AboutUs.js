@@ -2,10 +2,10 @@ import React from 'react';
 
 const AboutUs = () => {
     return (
-        <div className='my-10 shadow-lg shadow-base-200 mx-24'>
+        <div className='my-10 shadow-xl shadow-teal-200 mx-24 rounded-lg'>
             <div className="flex flex-col justify-between md:flex-row p-12">
                 <div className='text-start'>
-                    <h1 className='text-4xl font-bold text-green-500'>
+                    <h1 className='text-5xl font-bold text-green-500'>
                         We are TechnoGuys
                     </h1>
                     <p className='w-[800px] text-justify pt-5'>
